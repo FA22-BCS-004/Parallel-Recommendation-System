@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 Hybrid Recommendation</title>
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="static/css/main.css" rel="stylesheet">
+</head>
+
+<body style="background-color: #000; color: #fff;">
+
+  <section class="section dark-background">
+    <div class="container py-5">
+      <h2 class="text-center mb-4">🎬 Hybrid Recommendation</h2>
+
+      <form action="/recommend_hybrid" method="POST" class="mx-auto" style="max-width: 500px;">
+        <input type="number" name="user_id" class="form-control my-3" placeholder="Enter User ID" min="1" max="1000" required>
+        <input type="text" name="movie_title" class="form-control my-3" placeholder="Enter favorite movie title" required>
+        <button type="submit" class="btn btn-primary w-100">Recommend</button>
+      </form>
+
+      <!-- Go Back Button -->
+      <div class="text-center mt-4">
+        <a href="/" class="btn btn-secondary">
+          <i class="bi bi-arrow-left-circle"></i> Go Back
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Include footer -->
+  {% include "footer.html" %}
+
+</body>
+</html>

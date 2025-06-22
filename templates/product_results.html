@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🛍️ Product Recommendations</title>
+
+  <!-- ✅ Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Optional custom CSS -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+
+  <div class="container py-5">
+    <div class="text-center mb-4">
+      <h1 class="display-5">🛍️ Product Recommendations</h1>
+      <p class="lead">Here’s what we recommend based on your search.</p>
+    </div>
+
+    <div class="mb-4">
+      <h4><i class="bi bi-search text-info"></i> Entered Query: <span class="text-warning">{{ result.query }}</span></h4>
+      <h5><i class="bi bi-check-circle text-success"></i> Found Match: <strong>{{ result.matched_product }}</strong></h5>
+      <p>🔹 Product: <strong>{{ result.matched_product }}</strong> (ASIN: {{ result.asin }})</p>
+    </div>
+
+    <div>
+      <h3 class="mb-3"><i class="bi bi-stars text-light"></i> Hybrid Recommendations</h3>
+      <ul class="list-group list-group-flush">
+        {% for item in result %}
+          <li class="list-group-item bg-dark text-white border-light">
+            <i class="bi bi-box-seam me-2 text-warning"></i> {{ item }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/product" class="btn btn-primary btn-lg">
+        <i class="bi bi-arrow-left-circle"></i> Try Another
+      </a>
+    </div>
+  </div>
+
+  <!-- ✅ Include footer -->
+  {% include "footer.html" %}
+
+  
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Gp Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-icons/font/bootstrap-icons.css') }}">
+<head>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+  <!-- Main CSS File -->
+  <link href="static/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">PRS</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#about">Solution</a></li>
+          <li><a href="#services">Technology</a></li>
+       
+          <li><a href="#team">Team</a></li>
+     
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+ <!-- index.html -->
+<!-- index.html -->
+<section id="hero" class="hero section dark-background">
+  <img src="static/img/hero-bg.jpg" alt="" data-aos="fade-in">
+  <div class="container">
+    <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-xl-6 col-lg-8">
+        <h2>Parallel Recommendation System<span>.</span></h2>
+        <p>A smart system that generates multiple recommendations simultaneously using advanced algorithms and real-time analysis</p>
+      </div>
+    </div>
+
+    <!-- Only Hybrid Option Kept -->
+
+
+<div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+  <div class="col-xl-3 col-md-4">
+    <div class="icon-box text-center">
+      <i class="fas fa-search"></i>
+      <a href="/hybrid" class="btn btn-outline-light mt-2">Movie Recommendation</a>
+    </div>
+  </div>
+  
+  <div class="col-xl-3 col-md-4">
+    <div class="icon-box text-center">
+      <i class="fas fa-box"></i>
+      <a href="/product" class="btn btn-outline-light mt-2">Product Recommendations</a>
+    </div>
+  </div>
+
+  <!-- ✅ Book Recommendation Button -->
+  <div class="col-xl-3 col-md-4">
+    <div class="icon-box text-center">
+      <i class="fas fa-book"></i>
+      <a href="/book" class="btn btn-outline-light mt-2">Book Recommendation</a>
+    </div>
+  </div>
+</div>
+</section>
+
+    <!-- /Hero Section -->
+
+    <!-- About Section -->
+   
+<!-- About Section -->
+<section id="about" class="about section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row align-items-center">
+      
+      <!-- TEXT COLUMN: Left on desktop -->
+      <div class="col-12 col-lg-6">
+        <div class="content">
+         <h3>Our Solution</h3>
+<p class="fst-italic">
+  A scalable recommendation system that:
+</p>
+<ul>
+  <li><i class="bi bi-check2-all"></i> Parallelizes similarity computations.</li>
+  <li><i class="bi bi-check2-all"></i> Uses cosine similarity for matching items.</li>
+  <li><i class="bi bi-check2-all"></i> Applies CountVectorizer and TF-IDF for feature extraction.</li>
+  <li><i class="bi bi-check2-all"></i>  Speeds up processing with parallel similarity computation</li>
+</ul>
+
+        </div>
+      </div>
+
+      <!-- IMAGE COLUMN: Right on desktop -->
+     
+<div class="col-12 col-lg-6 d-flex align-items-stretch">
+  <div class="image-container w-100">
+    <img src="static/img/about.jpg" alt="About" class="img-fluid w-100" style="object-fit: cover; height: 100%;">
+  </div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- /About Section -->
+
+<!-- Clients Section -->
+
+<!-- /Clients Section -->
+
+<!-- Features Section -->
+<section id="features" class="features section">
+
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Image -->
+      <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+        <img src="static/img/features-bg.jpeg" alt="" class="img-fluid w-100" style="max-height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Text Content -->
+      <div class="col-lg-6">
+        <h2>System Architecture & Methodology</h2>
+
+        <!-- Feature 1 -->
+        <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-archive flex-shrink-0"></i>
+          <div>
+            <h4>Data Collection & Preprocessing</h4>
+            <p>Using MovieLens, Books, and Electronics datasets, we construct a sparse user-item matrix and clean metadata for content-based analysis. Missing and duplicate entries are handled for accuracy.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-basket flex-shrink-0"></i>
+          <div>
+            <h4>Parallel Similarity Computation</h4>
+            <p>Cosine similarity calculations are parallelized using Python’s ThreadPoolExecutor, speeding up processing of large datasets like reviews and book metadata.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-bar-chart flex-shrink-0"></i>
+          <div>
+            <h4>Content-Based Filtering</h4>
+            <p>Movies use CountVectorizer, while books and products use TF-IDF to convert text into feature vectors. Cosine similarity compares these to find top recommendations.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
+          <i class="bi bi-camera-reels flex-shrink-0"></i>
+          <div>
+            <h4>Recommendation Generation</h4>
+            <p>For a given query, the system retrieves similar items the user hasn’t interacted with. These are ranked by similarity scores and returned as personalized recommendations.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+  <h2>Technology Stack</h2>
+  <p>Technologies and tools powering our movie recommendation system</p>
+</div><!-- End Section Title -->
+
+<div class="container">
+  <div class="row gy-4">
+
+    <!-- Frontend -->
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-item position-relative" title="HTML, CSS, and JavaScript used for frontend.">
+        <div class="icon">
+          <i class="bi bi-activity"></i>
+        </div>
+        <h3>Frontend</h3>
+        <p>Developed using <strong>HTML</strong> for structure, <strong>CSS</strong> for styling, and <strong>JavaScript</strong> for dynamic interactions.</p>
+      </div>
+    </div>
+
+    <!-- Backend Flask -->
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-item position-relative" title="Flask handles routing and backend logic.">
+        <div class="icon">
+          <i class="bi bi-server"></i>
+        </div>
+        <h3>Backend: Flask</h3>
+        <p><strong>Flask</strong> is used as the backend framework for handling routes, user inputs, and delivering movie recommendations.</p>
+      </div>
+    </div>
+    <!-- TF-IDF Vectorizer -->
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+  <div class="service-item position-relative" title="Extracts weighted features from text for books and products.">
+    <div class="icon">
+      <i class="bi bi-text-paragraph"></i>
+    </div>
+    <h3>Feature Extraction: TF-IDF</h3>
+    <p><strong>TF-IDF</strong> (Term Frequency-Inverse Document Frequency) is used to extract important keywords from product reviews and book metadata for accurate recommendations.</p>
+  </div>
+</div>
+
+
+    <!-- CountVectorizer -->
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-item position-relative" title="Converts text data into numeric feature vectors.">
+        <div class="icon">
+          <i class="bi bi-diagram-3"></i>
+        </div>
+        <h3>Feature Extraction: CountVectorizer</h3>
+        <p>We use <strong>CountVectorizer</strong> from <code>scikit-learn</code> to convert movie titles and genres into numerical vectors for similarity analysis.</p>
+      </div>
+    </div>
+
+    <!-- Cosine Similarity -->
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+      <div class="service-item position-relative" title="Measures similarity between vectorized movies.">
+        <div class="icon">
+          <i class="bi bi-bounding-box-circles"></i>
+        </div>
+        <h3>Similarity Metric: Cosine</h3>
+        <p><strong>Cosine Similarity</strong> compares vector angles to find the most similar movies based on extracted features.</p>
+      </div>
+    </div>
+
+    <!-- Parallel JSON Handling -->
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+      <div class="service-item position-relative" title="Faster data loading with ThreadPoolExecutor.">
+        <div class="icon">
+          <i class="bi bi-lightning"></i>
+        </div>
+        <h3>Parallel Processing</h3>
+        <p><strong>ThreadPoolExecutor</strong> from Python's <code>concurrent.futures</code> speeds up JSON data loading and parsing through multithreading.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+    </section><!-- /Services Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <img src="static/img/cta-bg.jpg" alt="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Smart Picks Just for you  </h3>
+              <p>Whether you're in the mood for a movie, a new read, or a perfect gadget get personalized recommendation with just a click.</p>
+              <a class="cta-btn" href="#">Find My Match</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+   
+
+
+             
+
+    <!-- Testimonials Section -->
+   
+         
+        
+                  <!-- /Testimonials Section -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>our Team</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="static/img/team/woman.png" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Faiza Aslam</h4>
+                <span>Frontend and Products Recommendation</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="static/img/team/woman.png" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Areeba Nizam</h4>
+                <span>Books Recommendation</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="static/img/team/woman.png" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sana Kamran Butt</h4>
+                <span>Frontend and Products Recommendation</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="static/img/team/man.png" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Taha Ijaz</h4>
+                <span>Movies Recommendation</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Contact Us</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+  <!-- Google Map Embed -->
+  <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+    <iframe style="border:0; width: 100%; height: 270px;" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27214.50902058109!2d74.2100689!3d31.4027291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ffd0bc7c5f71%3A0x879e9b82857bcd94!2sCOMSATS%20University!5e0!3m2!1sen!2s!4v1718738293601!5m2!1sen!2s" 
+            frameborder="0" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <!-- End Google Maps -->
+
+  <div class="row gy-4">
+
+    <div class="col-lg-4">
+      <!-- Address Info -->
+      <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+        <i class="bi bi-geo-alt flex-shrink-0"></i>
+        <div>
+          <h3>Address</h3>
+          <p>COMSATS University Islamabad, Lahore Campus</p>
+        </div>
+      </div>
+
+      <!-- Phone Info -->
+      <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+        <i class="bi bi-telephone flex-shrink-0"></i>
+        <div>
+          <h3>Call Us</h3>
+          <p>+92 310 9980831</p>
+        </div>
+      </div>
+
+      <!-- Email Info -->
+      <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+        <i class="bi bi-envelope flex-shrink-0"></i>
+        <div>
+          <h3>Email Us</h3>
+          <p>fa22-bcs-004@cuilahore.edu.pk</p>
+        </div>
+      </div>
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">PRS</span>
+            </a>
+            <div class="footer-contact pt-3">
+            <p>COMSATS University Islamabad,</p>
+            <p>Lahore Pakistan</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+92 310 9980831</span></p>
+            <p><strong>Email:</strong> <span>fa22-bcs-004@cuilahore.edu.pk</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Terms of service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#"> Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+             <li><i class="bi bi-chevron-right"></i> <a href="#">Product recommendation</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Movie recommendation</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Book recommendation</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form method="post" class="php-email-form">
+  <div class="newsletter-form">
+    <input type="email" name="email" required placeholder="Enter your email">
+    <input type="submit" value="Subscribe" onclick="event.preventDefault();">
+  </div>
+  <div class="loading">Loading</div>
+  <div class="error-message"></div>
+  <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+</form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+   
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="static/js/main.js"></script>
+
+</body>
+
+</html>

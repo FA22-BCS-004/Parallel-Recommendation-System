@@ -1,4 +1,7 @@
-# Parallel-Recommendation-System
-⚠️ This project requires `product-recommendation/Electronics_5.json`, which is too large to include in the repo.
+## 🔗 Download Large Files (Manually)
+Due to GitHub's file size restrictions, the following files are not included in this repo:
 
-Please place it manually in the same folder after cloning.
+- `product-recommendation/Electronics_5.json` (~1.4 GB)
+- `book_data/Books.csv` (~70 MB)
+
+Please download and place them manually after cloning.

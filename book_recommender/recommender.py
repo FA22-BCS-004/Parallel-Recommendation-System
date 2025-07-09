@@ -32,6 +32,8 @@ tfidf_matrix = tfidf.fit_transform(book_id_to_desc.values())
 isbn_to_tfidf_idx = {isbn: idx for idx, isbn in enumerate(isbn_list)}
 
 # --- Recommendation Function ---
+from concurrent.futures import ThreadPoolExecutor
+
 def recommend_book(query, top_n=5):
     try:
         matched_row = None
@@ -40,33 +42,38 @@ def recommend_book(query, top_n=5):
                 matched_row = row
                 break
 
-        if not matched_row is None:
-            isbn = matched_row["ISBN"]
-            title = matched_row["Book-Title"]
-            tfidf_index = isbn_to_tfidf_idx.get(isbn)
-
-            if tfidf_index is None:
-                return [f"No TF-IDF data for book: {title}"]
-
-            cosine_scores = cosine_similarity(tfidf_matrix[tfidf_index], tfidf_matrix).flatten()
-
-            tfidf_scores = {}
-            for i in cosine_scores.argsort()[::-1]:
-                if i == tfidf_index:
-                    continue
-                sim_isbn = isbn_list[i]
-                tfidf_scores[sim_isbn] = cosine_scores[i]
-                if len(tfidf_scores) >= 20:
-                    break
-
-            top_books = list(tfidf_scores.items())
-            random.shuffle(top_books)
-            top_books = top_books[:top_n]
-
-            results = [book_id_to_title.get(isbn, "(No Title)") for isbn, _ in top_books]
-            return results
-        else:
+        if not matched_row:
             return ["❌ Book not found. Try with full or partial title or ISBN."]
+
+        isbn = matched_row["ISBN"]
+        title = matched_row["Book-Title"]
+        tfidf_index = isbn_to_tfidf_idx.get(isbn)
+
+        if tfidf_index is None:
+            return [f"No TF-IDF data for book: {title}"]
+
+        query_vector = tfidf_matrix[tfidf_index]
+
+        def compute_similarity(i):
+            if i == tfidf_index:
+                return None
+            score = cosine_similarity(query_vector, tfidf_matrix[i])[0][0]
+            return (isbn_list[i], score)
+
+        with ThreadPoolExecutor() as executor:
+            results = list(executor.map(compute_similarity, range(tfidf_matrix.shape[0])))
+
+        tfidf_scores = {
+            isbn: score for isbn, score in results if isbn is not None
+        }
+
+        # Sort and shuffle top recommendations
+        top_books = sorted(tfidf_scores.items(), key=lambda x: x[1], reverse=True)[:20]
+        random.shuffle(top_books)
+        top_books = top_books[:top_n]
+
+        results = [book_id_to_title.get(isbn, "(No Title)") for isbn, _ in top_books]
+        return results
 
     except Exception as e:
         return [f"❌ Error: {e}"]

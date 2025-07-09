@@ -1,17 +1,32 @@
+
 import pandas as pd
 import numpy as np
 import json
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from concurrent.futures import ThreadPoolExecutor
+from tqdm import tqdm
 
-def load_product_data(json_file="product-recommendation/Electronics_5.json", sample_size=100000):
-    data = []
+def parse_json_lines(lines):
+    results = []
+    for line in lines:
+        try:
+            results.append(json.loads(line))
+        except json.JSONDecodeError:
+            continue
+    return results
+
+def load_product_data(json_file="product-recommendation/Electronics_5.json", sample_size=100000, workers=4):
     with open(json_file, 'r', encoding='utf-8') as f:
-        for line in f:
-            try:
-                data.append(json.loads(line))
-            except json.JSONDecodeError:
-                continue
+        lines = f.readlines()
+
+    chunk_size = len(lines) // workers
+    chunks = [lines[i:i + chunk_size] for i in range(0, len(lines), chunk_size)]
+
+    data = []
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        for result in tqdm(executor.map(parse_json_lines, chunks), total=len(chunks), desc="Parsing JSON"):
+            data.extend(result)
 
     df = pd.DataFrame(data)[['reviewerID', 'asin', 'reviewText', 'overall', 'summary']].dropna()
     df = df.drop_duplicates(subset=["asin", "reviewerID"])
@@ -21,15 +36,10 @@ def load_product_data(json_file="product-recommendation/Electronics_5.json", sam
 def train_models(df):
     asin_to_summary = dict(zip(df['asin'], df['summary']))
     asin_to_index = {asin.upper(): i for i, asin in enumerate(df['asin'])}
-
     tfidf = TfidfVectorizer(stop_words="english", max_features=5000)
     tfidf_matrix = tfidf.fit_transform(df["reviewText"].fillna(""))
-
-    # Returning a dummy item_factors to match expected return values in app.py
     item_factors = np.random.rand(tfidf_matrix.shape[0], 20)
-
     idx_to_asin = {v: k for k, v in asin_to_index.items()}
-
     return asin_to_summary, asin_to_index, idx_to_asin, item_factors, tfidf_matrix, df
 
 def get_product_recommendations(query, df, asin_to_summary, asin_to_index, idx_to_asin, item_factors, tfidf_matrix, top_n=5):
